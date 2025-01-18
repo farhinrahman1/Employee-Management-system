@@ -13,19 +13,39 @@ const TaskList = () => {
       </div>
 
       {/* Horizontally Sliding Task Cards */}
-      <div className="overflow-x-auto">
+      <div id="tasklist" className="overflow-x-auto">
         <div className="flex space-x-4">
-          <div className="bg-yellow-500 text-black p-4 rounded shadow-md h-40 w-96 flex-shrink-0">
-            Task 1 Description
+          <div className="bg-white text-black p-4 rounded shadow-md h-80 w-60 flex-shrink-0">
+            <div className="flex justify-between">
+              <h3 className=" bg-black text-sm p-1 rounded">High</h3>
+              <h4 className='text-black text-sm p-1 font-medium rounded'>16 Jan 2025</h4>
+            </div>
+            <h2 className='text-black mt-5 text-xl font-semibold'>Make a Instagam logo</h2>
+            <p className='text-black text-sm mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
           </div>
-          <div className="bg-yellow-500 text-black p-4 rounded shadow-md h-40 w-96 flex-shrink-0">
-            Task 2 Description
+          <div className="bg-white text-black p-4 rounded shadow-md h-80 w-60 flex-shrink-0">
+            <div className="flex justify-between">
+              <h3 className=" bg-black text-sm p-1 rounded">High</h3>
+              <h4 className='text-black text-sm p-1 font-medium rounded'>06 Feb 2025</h4>
+            </div>
+            <h2 className='text-black mt-5 text-xl font-semibold'>Make a youtube video</h2>
+            <p className='text-black text-sm mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
           </div>
-          <div className="bg-yellow-500 text-black p-4 rounded shadow-md h-40 w-96 flex-shrink-0">
-            Task 3 Description
+          <div className="bg-white text-black p-4 rounded shadow-md h-80 w-60 flex-shrink-0">
+            <div className="flex justify-between">
+              <h3 className=" bg-black text-sm p-1 rounded">High</h3>
+              <h4 className='text-black text-sm p-1 font-medium rounded'>29 July 2025</h4>
+            </div>
+            <h2 className='text-black mt-5 text-xl font-semibold'>Make a react project</h2>
+            <p className='text-black text-sm mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
           </div>
-          <div className="bg-yellow-500 text-black p-4 rounded shadow-md h-40 w-96 flex-shrink-0">
-            Task 4 Description
+          <div className="bg-white text-black p-4 rounded shadow-md h-80 w-60 flex-shrink-0">
+            <div className="flex justify-between">
+              <h3 className=" bg-black text-sm p-1 rounded">High</h3>
+              <h4 className='text-black text-sm p-1 font-medium rounded'>30 Jan 2025</h4>
+            </div>
+            <h2 className='text-black mt-5 text-xl font-semibold'>Make a youtube video</h2>
+            <p className='text-black text-sm mt-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
           </div>
         </div>
       </div>
