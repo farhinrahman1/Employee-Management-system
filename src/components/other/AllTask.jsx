@@ -31,6 +31,12 @@ const AllTask = () => {
           <h2 className='text-black font-medium'>Farhin</h2>
           <h3 className='text-black'>Make a UI Whatsapp clone</h3>
           <h5 className='text-black'>Status</h5>
+          </div>
+          
+          <div className="bg-white mb-2 py-2 px-2 flex justify-between rounded">
+          <h2 className='text-black font-medium'>Farhin</h2>
+          <h3 className='text-black'>Make a UI Whatsapp clone</h3>
+          <h5 className='text-black'>Status</h5>
         </div>
       </div>
   );

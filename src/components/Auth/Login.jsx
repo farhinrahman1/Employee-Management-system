@@ -1,14 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
     //this is used to store the email and password entered by the user, set is used to update the value of the state
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const submitHandler = (e) => {
         //this is used to prevent the default behavior of the form, it will not relad the page
-        e.preventDefault();
+      e.preventDefault();
+      handleLogin(email,password)
         console.log('Email', email);
         console.log('Password', password);
 
