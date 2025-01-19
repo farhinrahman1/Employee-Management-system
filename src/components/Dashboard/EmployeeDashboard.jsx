@@ -3,12 +3,12 @@ import Header from '../other/Header';
 import TaskListNumbers from '../other/TaskListNumbers';
 import TaskList from '../TaskList/TaskList';
 
-const EmployeeDashboard = () => {
+const EmployeeDashboard = ({data}) => {
   return (
     <div className="min-h-screen bg-black text-white">
-          < Header />
-          <TaskListNumbers />  
-          <TaskList/>
+      < Header data={data} />
+      <TaskListNumbers data={ data} />  
+      <TaskList data={ data} />
 
       {/* Footer */}
       <footer className="bg-black p-4 text-center">

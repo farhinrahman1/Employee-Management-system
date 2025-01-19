@@ -1,6 +1,7 @@
 const employees = [
     {
         id: 1,
+        name: "Alice Johnson",
         email: "employee1@example.com",
         password: "123",
         tasks: [
@@ -34,10 +35,17 @@ const employees = [
                 taskDate: "2025-01-21",
                 category: "Analytics"
             }
-        ]
+        ],
+        taskCounts: {
+            active: 1,
+            newTask: 2,
+            completed: 1,
+            failed: 0
+        }
     },
     {
         id: 2,
+        name: "Bob Williams",
         email: "employee2@example.com",
         password: "123",
         tasks: [
@@ -61,10 +69,17 @@ const employees = [
                 taskDate: "2025-01-17",
                 category: "Management"
             }
-        ]
+        ],
+        taskCounts: {
+            active: 1,
+            newTask: 1,
+            completed: 1,
+            failed: 0
+        }
     },
     {
         id: 3,
+        name: "Catherine Smith",
         email: "employee3@example.com",
         password: "123",
         tasks: [
@@ -88,10 +103,17 @@ const employees = [
                 taskDate: "2025-01-23",
                 category: "Design"
             }
-        ]
+        ],
+        taskCounts: {
+            active: 2,
+            newTask: 1,
+            completed: 0,
+            failed: 1
+        }
     },
     {
         id: 4,
+        name: "David Brown",
         email: "employee4@example.com",
         password: "123",
         tasks: [
@@ -115,10 +137,17 @@ const employees = [
                 taskDate: "2025-01-20",
                 category: "Development"
             }
-        ]
+        ],
+        taskCounts: {
+            active: 1,
+            newTask: 1,
+            completed: 1,
+            failed: 0
+        }
     },
     {
         id: 5,
+        name: "Evelyn Davis",
         email: "employee5@example.com",
         password: "123",
         tasks: [
@@ -142,13 +171,20 @@ const employees = [
                 taskDate: "2025-01-15",
                 category: "Marketing"
             }
-        ]
+        ],
+        taskCounts: {
+            active: 1,
+            newTask: 0,
+            completed: 1,
+            failed: 1
+        }
     }
 ];
 
 const admin = [
     {
         id: 1,
+        name: "Admin User",
         email: "admin@example.com",
         password: "123"
     }
@@ -157,11 +193,10 @@ const admin = [
 export const setLocalStorage = () => { 
     localStorage.setItem("employees", JSON.stringify(employees));
     localStorage.setItem("admin", JSON.stringify(admin));
-}   
+};
 
 export const getLocalStorage = () => {
-    const employees = localStorage.getItem("employees");
-
-    const admin = localStorage.getItem("admin");
+    const employees = JSON.parse(localStorage.getItem("employees"));
+    const admin = JSON.parse(localStorage.getItem("admin"));
     return { employees, admin };
-}
+};
