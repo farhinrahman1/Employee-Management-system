@@ -185,7 +185,7 @@ const admin = [
     {
         id: 1,
         name: "Admin User",
-        email: "admin@example.com",
+        email: "admin@me.com",
         password: "123"
     }
 ];
