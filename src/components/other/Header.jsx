@@ -14,6 +14,7 @@ const Header = ({ data }) => {
     localStorage.setItem('loggedInUser', "")
     window.location.reload()
   }
+  console.log(data)
 
   return (
     <header className="bg-black p-4 flex justify-between items-center">
