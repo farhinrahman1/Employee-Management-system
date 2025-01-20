@@ -12,6 +12,7 @@ const App = () => {
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('loggedInUser')
+
     if (loggedInUser) {
       const userData = JSON.parse(loggedInUser)
       setUser(userData.role)
@@ -44,7 +45,7 @@ const App = () => {
   return (
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ""}
-      {user === "admin" ? <AdminDashboard data={loggedInUserData} /> : user === "employee" ? <EmployeeDashboard data={loggedInUserData} /> : null}
+      {user === "admin" ? <AdminDashboard changeUser={setUser} data={loggedInUserData} /> : user === "employee" ? <EmployeeDashboard changeUser={setUser} data={loggedInUserData} /> : null}
     </>
   )
 }

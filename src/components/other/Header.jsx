@@ -1,7 +1,7 @@
 import React from 'react';
 import { setLocalStorage } from '../../utils/localStorage';
 
-const Header = ({ data }) => {
+const Header = ({data}) => {
 
   // const [username, setUsername] = useState('')
   // if (!data) {
@@ -12,9 +12,9 @@ const Header = ({ data }) => {
 
   const logOutUser = () => {
     localStorage.setItem('loggedInUser', "")
+    // props.changeUser(null)
     window.location.reload()
   }
-  console.log(data)
 
   return (
     <header className="bg-black p-4 flex justify-between items-center">

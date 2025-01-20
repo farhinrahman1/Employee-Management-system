@@ -1,10 +1,44 @@
 import React from "react";
+import { useState } from "react";
+
 
 const CreateTask = () => {
+
+  const [taskTitle, setTaskTitle] = useState('')
+  const [taskDesc, setTaskDesc] = useState('')
+  const [taskDate, setTaskDate] = useState('')
+  const [assignTo, setAssignTo] = useState('')
+  const [category, setCategory] = useState('')
+
+  const [newTask, setnewTask] = useState({})
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+
+    setnewTask({ taskTitle, taskDesc, taskDate, category, active: false, newTask: true, completed: false, failed: false })
+    const data = JSON.parse(localStorage.getItem('employees'))
+    console.log(data)
+
+    data.forEach(function (elem) {
+      if (assignTo === elem.name) {
+        elem.tasks.push(newTask)
+        console.log(elem)
+      }
+    })
+
+    localStorage.setItem('employees', JSON.stringify(data))
+    setTaskDate('')
+    setTaskDesc('')
+    setTaskTitle('')
+    setAssignTo('')
+    setCategory('')
+  }
   return (
     <div className="max-w-5xl mx-auto p-4 rounded-lg shadow-lg mt-8 bg-slate-950">
       <h2 className="text-3xl font-bold text-white mb-6">Create Task</h2>
-      <form>
+      <form onSubmit={(e) => {
+        submitHandler(e)
+      }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Section */}
           <div className="flex flex-col space-y-6">
@@ -14,6 +48,8 @@ const CreateTask = () => {
                 Task Title
               </label>
               <input
+                value={taskTitle}
+                onChange={(e) => setTaskTitle(e.target.value)}
                 id="taskTitle"
                 type="text"
                 className="p-3 border text-black border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
@@ -27,6 +63,8 @@ const CreateTask = () => {
                 Description
               </label>
               <textarea
+                value={taskDesc}
+                onChange={(e) => setTaskDesc(e.target.value)}
                 id="description"
                 className="p-3 border text-black border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
                 rows="6"
@@ -43,6 +81,8 @@ const CreateTask = () => {
                 Date
               </label>
               <input
+                value={taskDate}
+                onChange={(e) => setTaskDate(e.target.value)}
                 id="date"
                 type="date"
                 className="p-3 border text-black border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
@@ -55,6 +95,8 @@ const CreateTask = () => {
                 Assign To
               </label>
               <input
+                value={assignTo}
+                onChange={(e) => setAssignTo(e.target.value)}
                 id="assignTo"
                 type="text"
                 className="p-3 border text-black border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
@@ -68,6 +110,8 @@ const CreateTask = () => {
                 Category
               </label>
               <input
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
                 id="category"
                 type="text"
                 className="p-3 border text-black border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400"
